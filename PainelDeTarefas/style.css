@@ -1,0 +1,192 @@
+:root {
+    --blue-dark:   #1e3a5f;
+    --blue-med:    #305a91;
+    --blue-light:  #344f72;
+    --beige-1:     #b9a88c;
+    --beige-2:     #cfb490;
+    --beige-3:     #ddccb1;
+    --beige-4:     #decdb3;
+    --black:       #000000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--beige-3);
+    color: var(--black);
+    padding: 0;
+    margin: 0;
+}
+
+.titulo {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--beige-3);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.filtros {
+    background-color: var(--blue-med);
+    padding: 12px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.filtros button,
+.filtros input {
+    color: var(--beige-3);
+    font-family: sans-serif;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid var(--blue-light);
+}
+
+.filtros button {
+    background: transparent;
+    cursor: pointer;
+}
+
+.filtros #busca {
+    flex: 1;
+    background: var(--beige-4);
+    color: var(--black);
+    border: 1px solid var(--blue-light);
+}
+
+.titulo h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--beige-3);
+    background-color: var(--blue-dark);
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 8px;
+    margin: 0 auto 30px;
+}
+
+#formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#formulario input,
+#formulario button {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--blue-light);
+    font-size: 0.95rem;
+}
+
+#formulario button {
+    background-color: var(--blue-dark);
+    color: var(--beige-3);
+    border: none;
+    cursor: pointer;
+}
+
+#formulario button:hover {
+    background-color: var(--blue-med);
+}
+
+#contagem {
+    text-align: left;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: var(--blue-dark);
+}
+
+#listaTarefas {
+    list-style: none;
+    padding: 0;
+}
+
+#listaTarefas li {
+    background-color: var(--beige-2);
+    border-left: 6px solid var(--blue-light);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: var(--black);
+    position: relative;
+}
+
+#listaTarefas li.atrasada {
+    background-color: var(--beige-4);
+    border-left-color: crimson;
+}
+
+#listaTarefas li.concluida {
+    background-color: var(--beige-4);
+    border-left-color: #4caf50;
+    font-weight: bold;
+}
+
+.vencida {
+    color: crimson;
+    font-weight: bold;
+}
+
+#listaTarefas li .botoes {
+    margin-top: 15px;
+    display: flex;
+    gap: 12px;
+}
+
+#listaTarefas li .botoes button {
+    padding: 8px 14px;
+    border-radius: 4px;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#listaTarefas li .botoes button:first-of-type {
+    background-color: var(--blue-med);
+    color: var(--beige-3);
+}
+
+#listaTarefas li .botoes button:last-of-type {
+    background-color: #cf4f3f;
+    color: #fff;
+}
+
+#listaTarefas li .botoes button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.subtarefas {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid var(--blue-light);
+    font-size: 0.9rem;
+}
+
+.subtarefas label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.subtarefas input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#listaTarefas li .botoes button:hover {
+    background-color: var(--blue-light);
+}
+
+#listaTarefas li .botoes button:active {
+    background-color: #4caf50;
+    color: #fff;
+}

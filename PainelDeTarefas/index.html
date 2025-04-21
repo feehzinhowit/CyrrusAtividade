@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="titulo">
+        <h1>Painel de Tarefas</h1>
+
+        <form id="formulario">
+            <input type="text" id="tituloTarefa" placeholder="Título" required>
+            <input type="text" id="descricaoTarefa" placeholder="Descrição">
+            <input type="date" id="dataTarefa">
+            <button type="submit">Adicionar Tarefa</button>
+          </form>
+
+        <div class="filtros">
+            <button data-filter="todos">Todas</button>
+            <button data-filter="pendentes">Pendentes</button>
+            <button data-filter="concluidas">Concluídas</button>
+            <input type="text" id="busca" placeholder="Buscar por título:">
+        </div>
+
+        <div id="contagem"></div>
+        
+        <ul id="listaTarefas"></ul>
+
+    </div>
+    <script src="script.js"></script
+</body>
+</html>
