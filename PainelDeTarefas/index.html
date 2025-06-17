@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Tarefas</title>
+    <title data-i18n="title">Painel de Tarefas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="titulo">
-        <h1>Painel de Tarefas</h1>
+        <h1 data-i18n="title">Painel de Tarefas</h1>
 
         <form id="formulario">
-            <input type="text" id="tituloTarefa" placeholder="Título" required>
-            <input type="text" id="descricaoTarefa" placeholder="Descrição">
+            <input type="text" id="tituloTarefa" data-i18n-placeholder="taskTitle" placeholder="Título" required>
+            <input type="text" id="descricaoTarefa" data-i18n-placeholder="taskDescription" placeholder="Descrição">
             <input type="date" id="dataTarefa">
-            <button type="submit">Adicionar Tarefa</button>
-          </form>
+            <button type="submit" data-i18n="addTask">Adicionar Tarefa</button>
+        </form>
 
         <div class="filtros">
-            <button data-filter="todos">Todas</button>
-            <button data-filter="pendentes">Pendentes</button>
-            <button data-filter="concluidas">Concluídas</button>
-            <input type="text" id="busca" placeholder="Buscar por título:">
+            <button data-filter="todos" data-i18n="allTasks">Todas</button>
+            <button data-filter="pendentes" data-i18n="pendingTasks">Pendentes</button>
+            <button data-filter="concluidas" data-i18n="completedTasks">Concluídas</button>
+            <input type="text" id="busca" data-i18n-placeholder="searchPlaceholder" placeholder="Buscar por título:">
         </div>
 
         <div id="contagem"></div>
@@ -30,6 +30,8 @@
         <ul id="listaTarefas"></ul>
 
     </div>
-    <script src="script.js"></script
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -8,6 +8,16 @@ let tarefas = [];
 let filtroAtual = "todos";
 let termoBusca = "";
 
+// Inicialização do i18next
+i18next.init({
+    resources,
+    lng: 'pt', // idioma padrão
+    fallbackLng: 'pt',
+    interpolation: {
+        escapeValue: false
+    }
+});
+
 // Função para formatar a data no formato dd/mm/aaaa
 function formatarData(data) {
   const dataObj = new Date(data);
@@ -16,6 +26,38 @@ function formatarData(data) {
   const ano = dataObj.getFullYear();
   return `${dia}/${mes}/${ano}`;
 }
+
+// Função para atualizar os textos na página
+function updateContent() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        element.textContent = i18next.t(key);
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        element.placeholder = i18next.t(key);
+    });
+}
+
+// Função para trocar o idioma
+function changeLanguage(lng) {
+    i18next.changeLanguage(lng).then(() => {
+        updateContent();
+    });
+}
+
+// Adiciona botões de idioma
+const languageButtons = document.createElement('div');
+languageButtons.style.marginBottom = '20px';
+languageButtons.innerHTML = `
+    <button onclick="changeLanguage('pt')">PT</button>
+    <button onclick="changeLanguage('en')">EN</button>
+`;
+document.querySelector('.titulo').insertBefore(languageButtons, document.querySelector('#formulario'));
+
+// Atualiza o conteúdo inicial
+updateContent();
 
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
