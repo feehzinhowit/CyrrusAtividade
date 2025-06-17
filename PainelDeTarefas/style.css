@@ -1,7 +1,6 @@
 :root {
-    --blue-dark:   #5f1e21;
-    /*#1e3a5f*/
-    /*#344f72*/
+    --blue-dark:   #1e3a5f;
+    --blue-light:  #344f72;
     --blue-light:  #c40d16;
     --beige:       #b9a88c;
     --beige-light: #ddccb1;
