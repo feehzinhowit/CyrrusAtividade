@@ -190,3 +190,33 @@ body {
     background-color: var(--gren);
     color: var(--beige);
 }
+
+.language-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.language-button:hover {
+    transform: scale(1.1);
+}
+
+.language-button img {
+    width: 30px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.titulo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.titulo-container h1 {
+    margin: 0;
+}
