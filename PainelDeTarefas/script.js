@@ -46,7 +46,7 @@ function changeLanguage(lng) {
         updateContent();
         // Atualiza a bandeira
         const flagButton = document.querySelector('.language-button img');
-        flagButton.src = lng === 'pt' ? 'https://flagcdn.com/w40/br.png' : 'https://flagcdn.com/w40/us.png';
+        flagButton.src = lng === 'pt' ? 'https://flagcdn.com/w40/us.png' : 'https://flagcdn.com/w40/br.png';
         flagButton.alt = lng === 'pt' ? 'Português' : 'English';
     });
 }
