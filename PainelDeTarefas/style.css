@@ -1,13 +1,10 @@
 :root {
-    --blue-dark:   #680909;
-    /*#1e3a5f*/
-    --blue-light:  #b62020;
-    /*#344f72*/
+    --blue-dark:   #1e3a5f;
+    --blue-light:  #344f72;
     --beige:       #b9a88c;
     --beige-light: #ddccb1;
     --black:       #000000;
     --red:         #dc143c;
-    /*#dc143c*/
     --green:       #4caf50;
     --orange:      #cf4f3f;
 }
