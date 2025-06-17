@@ -11,7 +11,7 @@ let termoBusca = "";
 // Inicialização do i18next
 i18next.init({
     resources,
-    lng: 'pt', // idioma padrão
+    lng: 'pt',
     fallbackLng: 'pt',
     interpolation: {
         escapeValue: false
@@ -44,17 +44,19 @@ function updateContent() {
 function changeLanguage(lng) {
     i18next.changeLanguage(lng).then(() => {
         updateContent();
+        // Atualiza a bandeira
+        const flagButton = document.querySelector('.language-button img');
+        flagButton.src = lng === 'pt' ? 'https://flagcdn.com/w40/br.png' : 'https://flagcdn.com/w40/us.png';
+        flagButton.alt = lng === 'pt' ? 'Português' : 'English';
     });
 }
 
-// Adiciona botões de idioma
-const languageButtons = document.createElement('div');
-languageButtons.style.marginBottom = '20px';
-languageButtons.innerHTML = `
-    <button onclick="changeLanguage('pt')">PT</button>
-    <button onclick="changeLanguage('en')">EN</button>
-`;
-document.querySelector('.titulo').insertBefore(languageButtons, document.querySelector('#formulario'));
+// Configura o botão de idioma
+const languageButton = document.querySelector('.language-button');
+languageButton.onclick = () => {
+    const currentLang = i18next.language;
+    changeLanguage(currentLang === 'pt' ? 'en' : 'pt');
+};
 
 // Atualiza o conteúdo inicial
 updateContent();
