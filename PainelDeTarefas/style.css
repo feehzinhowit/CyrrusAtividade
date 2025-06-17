@@ -2,11 +2,12 @@
     --blue-dark:   #1e3a5f;
     --blue-med:    #305a91;
     --blue-light:  #344f72;
-    --beige-1:     #b9a88c;
-    --beige-2:     #cfb490;
-    --beige-3:     #ddccb1;
-    --beige-4:     #decdb3;
+    --beige:       #b9a88c;
+    --beige-light: #ddccb1;
     --black:       #000000;
+    --red:         #dc143c;
+    --green:       #4caf50;
+
 }
 
 * {
@@ -17,7 +18,7 @@
 
 body {
     font-family: sans-serif;
-    background-color: var(--beige-3);
+    background-color: var(--beige-light);
     color: var(--black);
     padding: 0;
     margin: 0;
@@ -26,7 +27,7 @@ body {
 .titulo {
     max-width: 900px;
     margin: 0 auto;
-    background-color: var(--beige-3);
+    background-color: var(--beige-light);
     padding: 30px;
     border-radius: 8px;
 }
@@ -43,7 +44,7 @@ body {
 
 .filtros button,
 .filtros input {
-    color: var(--beige-3);
+    color: var(--beige-light);
     font-family: sans-serif;
     padding: 8px 12px;
     border-radius: 5px;
@@ -57,7 +58,7 @@ body {
 
 .filtros #busca {
     flex: 1;
-    background: var(--beige-4);
+    background: var(--beige);
     color: var(--black);
     border: 1px solid var(--blue-light);
 }
@@ -65,7 +66,7 @@ body {
 .titulo h1 {
     font-size: 3rem;
     text-align: center;
-    color: var(--beige-3);
+    color: var(--beige-light);
     background-color: var(--blue-dark);
     display: inline-block;
     padding: 20px 40px;
@@ -90,7 +91,7 @@ body {
 
 #formulario button {
     background-color: var(--blue-dark);
-    color: var(--beige-3);
+    color: var(--beige-light);
     border: none;
     cursor: pointer;
 }
@@ -112,7 +113,7 @@ body {
 }
 
 #listaTarefas li {
-    background-color: var(--beige-2);
+    background-color: var(--beige-light);
     border-left: 6px solid var(--blue-light);
     border-radius: 5px;
     margin-bottom: 20px;
@@ -122,18 +123,18 @@ body {
 }
 
 #listaTarefas li.atrasada {
-    background-color: var(--beige-4);
-    border-left-color: crimson;
+    background-color: var(--beige-light);
+    border-left-color: var(--red);
 }
 
 #listaTarefas li.concluida {
-    background-color: var(--beige-4);
-    border-left-color: #4caf50;
+    background-color: var(--beige-light);
+    border-left-color: var(--green);
     font-weight: bold;
 }
 
 .vencida {
-    color: crimson;
+    color: var(--red);
     font-weight: bold;
 }
 
@@ -153,16 +154,16 @@ body {
 
 #listaTarefas li .botoes button:first-of-type {
     background-color: var(--blue-med);
-    color: var(--beige-3);
+    color: var(--beige-light);
 }
 
 #listaTarefas li .botoes button:last-of-type {
     background-color: #cf4f3f;
-    color: #fff;
+    color: var(--beige);
 }
 
 #listaTarefas li .botoes button:disabled {
-    background-color: #ccc;
+    background-color: var(--beige);
     cursor: not-allowed;
 }
 
@@ -187,6 +188,6 @@ body {
 }
 
 #listaTarefas li .botoes button:active {
-    background-color: #4caf50;
-    color: #fff;
+    background-color: var(--gren);
+    color: var(--beige);
 }
